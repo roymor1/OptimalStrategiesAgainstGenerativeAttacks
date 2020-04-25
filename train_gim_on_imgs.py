@@ -109,7 +109,7 @@ def get_args():
     parser.add_argument('-d', '--device', default='cuda', help="cuda or cpu")
     parser.add_argument('--device_ids', nargs='+', type=int, default=[0])
     parser.add_argument('-o', '--outdir',
-                        default='./gim_outdir/')
+                        default='./gim_imgs_outdir/')
     parser.add_argument('--dataset_root', help='path to dataset dir', required=True)
     parser.add_argument('--dataset_type', default='omniglot', help='options are omniglot or voxceleb2')
     parser.add_argument('--ckpt_dir_name', default='ckpts')
