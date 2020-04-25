@@ -62,5 +62,5 @@ def game_value_diff_ml_vs_opt_rho_delta(d, rho, delta):
 # Unit Test
 ########################################################################################################################
 if __name__ == '__main__':
-    v = game_value_mnk(m=1, n=10, k=10, d=1)
+    v = game_value_mnk(m=1, n=2, k=10, d=100)
     print(v)

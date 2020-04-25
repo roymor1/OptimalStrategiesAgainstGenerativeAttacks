@@ -52,7 +52,7 @@ def main(args):
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-d', '--device', default='cuda')
+    parser.add_argument('-d', '--device', default='cuda', help='cuda or cpu')
     parser.add_argument('--device_ids', nargs='+', type=int, default=[0])
     parser.add_argument('-o', '--outdir',
                         default='./gim_gaussians_outdir/')
