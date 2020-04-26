@@ -120,8 +120,10 @@ def main(args):
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--src_vid_ds_root',
+                        required=True,
                         help='path to voxceleb2 video directory at .../test/mp4/ or /dev/mp4')
     parser.add_argument('--dst_img_ds_root',
+                        required=True,
                         help='location of new dataset')
     parser.add_argument('--img_size', type=int, default=64)
     parser.add_argument('--skip_frames', type=int, default=5)

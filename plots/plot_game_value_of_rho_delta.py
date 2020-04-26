@@ -63,7 +63,7 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--d', type=int, default=100, help='The dimension of observations')
     parser.add_argument('--plot_type',
-                        default='game_value_diff_ml_vs_opt',
+                        default='nash_game_value',
                         help='The type of plot:\n'
                              '"nash_game_value": Plot the game value as a function of delta and rho.\n'
                              '"ml_attacker_game_value": '

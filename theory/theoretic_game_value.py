@@ -1,4 +1,5 @@
 # imports
+import argparse
 import numpy as np
 from scipy.special import gammainc
 
@@ -58,9 +59,18 @@ def game_value_diff_ml_vs_opt_rho_delta(d, rho, delta):
     return ml_attacker_game_value_rho_delta(d, rho, delta) - game_value_rho_delta(d, rho, delta)
 
 
+def get_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-m', type=int, default=1)
+    parser.add_argument('-n', type=int, default=5)
+    parser.add_argument('-k', type=int, default=10)
+    parser.add_argument('-d', type=int, default=100)
+    return parser.parse_args()
+
 ########################################################################################################################
 # Unit Test
 ########################################################################################################################
 if __name__ == '__main__':
-    v = game_value_mnk(m=1, n=2, k=10, d=100)
+    args = get_args()
+    v = game_value_mnk(m=args.m, n=args.n, k=args.k, d=args.d)
     print(v)
