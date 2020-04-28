@@ -13,7 +13,7 @@ This work was published as an oral presentation in the International Conference 
     * [Game value plots](#game-value-plots)
     * [Training GIM on Gaussians](#training-gim-on-gaussians)
     * [Training GIM on Images](#training-gim-on-images)
-    * [Evaluating GIM on the authentication task](#rvaluating-gim-on-the-authentication-task)
+    * [Evaluating GIM on the authentication task](#evaluating-gim-on-the-authentication-task)
 * [Citation](#citation)
 
 ## Setup
