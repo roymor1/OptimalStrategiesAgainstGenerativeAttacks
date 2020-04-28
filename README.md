@@ -12,7 +12,7 @@ This work was published as an oral presentation in the International Conference 
 * [Usage](#usage)
     * [Game value plots](#game-value-plots)
     * [Training GIM on Gaussians](#training-gim-on-gaussians)
-    * [Training GIM on imgs](#training-gim-on-imgs)
+    * [Training GIM on Images](#training-gim-on-images)
     * [Evaluating GIM on the authentication task](#rvaluating-gim-on-the-authentication-task)
 * [Citation](#citation)
 
@@ -69,7 +69,7 @@ You can monitor the training progress with [tensorboard][tb] by running:
 $ tensorboard --logdir <output directory path>/tb/
 ```
 
-### Training GIM on imgs
+### Training GIM on images
 #### Datsets
 To train GIM on images you first need to create an image dataset in the following directory structure:
 
