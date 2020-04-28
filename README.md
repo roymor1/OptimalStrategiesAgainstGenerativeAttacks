@@ -97,7 +97,7 @@ Once you have a dataset, you can train GIM using the following command line:
 ```console
 $ python python train_gim_on_imgs.py -o <output dir> --dataset_root <root dir of dataset> -dataset_type <omniglot or voxceleb2>
 ```
-To see the rest of the optional arguments you can run:
+To see the rest of the optional arguments and the hyper-parametrs we used in the paper for training GIM on omniglot and voxceleb2 you can run:
 ```console
 $ python train_gim_on_imgs.py --help
 ```
