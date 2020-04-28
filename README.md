@@ -8,6 +8,7 @@ This work was published as an oral presentation in the International Conference 
 
 ## Table of Contents
 
+* [Setup](#setup)
 * [Usage](#usage)
     * [Game value plots](#game-value-plots)
     * [Training GIM on Gaussians](#datsets)
@@ -59,9 +60,9 @@ The program will create the following directories:
 
 \<output directory path\>/ckpts/ - The directory where all the training checkpoints are saved. 
 
-\<output directory path\>/logs - The directory where all the logs are saved, if there are any.
+\<output directory path\>/logs/ - The directory where all the logs are saved, if there are any.
 
-\<output directory path\>/tb - The tensorboard directory
+\<output directory path\>/tb/ - The tensorboard directory
 
 You can monitor the training progress with [tensorboard][tb] by running:
 ```console
@@ -106,9 +107,9 @@ The program will create the following directories:
 
 \<output dir\>/ckpts/ - The directory where all the training checkpoints are saved. 
 
-\<output dir\>/logs - The directory where all the logs are saved, if there are any.
+\<output dir\>/logs/ - The directory where all the logs are saved, if there are any.
 
-\<output dir\>/tb - The tensorboard directory
+\<output dir\>/tb/ - The tensorboard directory
 
 You can monitor the training progress with [tensorboard][tb] by running:
 ```console
@@ -116,6 +117,16 @@ $ tensorboard --logdir <output dir>/tb/
 ```
 
 ### Evaluating GIM on the authentication task
+To evaluate GIM on the authentication task run:
+```console
+$ python authentication_eval/eval_gim_on_authentication.py --ds_root <dataset root> --gim_exp_dir <GIM experiment output directory>
+```
+This will create a .csv file with the authentication results of GIM vs. GIM, GIM vs. Replay and GIM vs. RS, As seen in the paper.
+
+To see the rest of the optional arguments you can run:
+```console
+$ python authentication_eval/eval_gim_on_authentication.py --help
+```
 
 ## Citation
 ```
