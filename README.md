@@ -86,9 +86,9 @@ hierarchy originated from the structure of the Omniglot and Voxceleb2 dataset.
 
 * \<class\> is the of classes. (E.g characters in Omniglot, or identities in face images). Each class directory contains all the images of that class
 
-You can prepare both train ('dev' in the raw Voxceleb2 dataset) and val ('test' in the raw Voxceleb2 dataset) Voxceleb2 datasets using 
+You can create both train ('dev' in the raw Voxceleb2 dataset) and val ('test' in the raw Voxceleb2 dataset) Voxceleb2 datasets using: 
 ```console
-$ python data_handling/prepare_voxceleb_dataset.py --src_vid_ds_root <path to the raw voxceleb2 video directory at .../test/mp4/ or /dev/mp4> --dst_img_ds_root path to the new dataset>
+$ python data_handling/prepare_voxceleb_dataset.py --src_vid_ds_root <path to the raw voxceleb2 video directory at .../test/mp4/ or /dev/mp4> --dst_img_ds_root <path to the new dataset>
 ```
 For omniglot simply divide the dataset to train and val directories (see paper for splits and augmentation).
 
