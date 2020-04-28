@@ -20,7 +20,7 @@ This work was published as an oral presentation in the International Conference 
 See requirements.txt for the required packages to using this repo.
 ## Usage 
 ### Game value plots
-In this section we describe how to use the theoretic game value functions and plot several game value plots as seen in the paper and presentation.
+In this section, we describe how to use the theoretic game value functions and plot several game value plots as seen in the paper and presentation.
 * To print out the game value for a specific assignment of m,n,k,d, run for example the following command line:
 ```console
 $ python theory/theoretic_game_value.py -m 1 -n 5 -k 10 -d 10
@@ -60,7 +60,7 @@ The program will create the following directories:
 
 \<output directory path\>/ckpts/ - The directory where all the training checkpoints are saved. 
 
-\<output directory path\>/logs/ - The directory where all the logs are saved, if there are any.
+\<output directory path\>/logs/ - The directory where all the logs are saved (if there are any).
 
 \<output directory path\>/tb/ - The tensorboard directory
 
@@ -70,7 +70,7 @@ $ tensorboard --logdir <output directory path>/tb/
 ```
 
 ### Training GIM on images
-#### Datsets
+#### Datasets
 To train GIM on images you first need to create an image dataset in the following directory structure:
 
 \<dataset root\>/\<split\>/\<group\>/\<class\>/img.jpg
@@ -107,7 +107,7 @@ The program will create the following directories:
 
 \<output dir\>/ckpts/ - The directory where all the training checkpoints are saved. 
 
-\<output dir\>/logs/ - The directory where all the logs are saved, if there are any.
+\<output dir\>/logs/ - The directory where all the logs are saved (if there are any).
 
 \<output dir\>/tb/ - The tensorboard directory
 
@@ -121,7 +121,7 @@ To evaluate GIM on the authentication task run:
 ```console
 $ python authentication_eval/eval_gim_on_authentication.py --ds_root <dataset root> --gim_exp_dir <GIM experiment output directory>
 ```
-This will create a .csv file with the authentication results of GIM vs. GIM, GIM vs. Replay and GIM vs. RS, As seen in the paper.
+This will create a .csv file with the authentication results of GIM vs. GIM, GIM vs. Replay, and GIM vs. RS, as seen in the paper.
 
 To see the rest of the optional arguments you can run:
 ```console
