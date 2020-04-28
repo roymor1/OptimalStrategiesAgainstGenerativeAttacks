@@ -7,9 +7,9 @@ pip==20.0.2
 plotly==4.6.0
 scikit-learn==0.21.2
 seaborn==0.9.0
-tensorboard==1.13.1
+tensorboard
 tensorboardX==1.7
-tensorflow==1.13.1
+tensorflow
 torch==1.2.0
 torchvision==0.4.0
 tqdm==4.32.1
