@@ -90,12 +90,12 @@ You can create both train ('dev' in the raw Voxceleb2 dataset) and val ('test' i
 ```console
 $ python data_handling/prepare_voxceleb_dataset.py --src_vid_ds_root <path to the raw voxceleb2 video directory at .../test/mp4/ or /dev/mp4> --dst_img_ds_root <path to the new dataset>
 ```
-For omniglot simply divide the dataset to train and val directories (see paper for splits and augmentation).
+For omniglot, simply divide the dataset to train and val directories (see paper for splits and augmentation).
 
 #### Training
 Once you have a dataset, you can train GIM using the following command line:
 ```console
-$ python python train_gim_on_imgs.py -o <output dir> --dataset_root <root dir of dataset> -dataset_type <omniglot or voxceleb2>
+$ python python train_gim_on_imgs.py -o <output dir> --dataset_root <root dir of dataset> --dataset_type <omniglot or voxceleb2>
 ```
 To see the rest of the optional arguments and the hyper-parametrs we used in the paper for training GIM on omniglot and voxceleb2 you can run:
 ```console
