@@ -106,34 +106,52 @@ def main(args):
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-d', '--device', default='cuda', help="cuda or cpu")
-    parser.add_argument('--device_ids', nargs='+', type=int, default=[0])
-    parser.add_argument('-o', '--outdir',
-                        default='./gim_imgs_outdir/')
-    parser.add_argument('--dataset_root', help='path to dataset dir', required=True)
-    parser.add_argument('--dataset_type', default='omniglot', help='options are omniglot or voxceleb2')
+    parser.add_argument('-d', '--device', default='cuda',
+                        help="cuda or cpu")
+    parser.add_argument('--device_ids', nargs='+', type=int, default=[0],
+                        help='A list of device ids for the GPUS to be used. '
+                             'E.g., if using GPUs 1,3,5,8, use: --device_ids 1 3 5 8. '
+                             'Only relevant when using cuda.')
+    parser.add_argument('-o', '--outdir', default='./gim_imgs_outdir/',
+                        help='Output directory for the experiment ')
+    parser.add_argument('--dataset_root', required=True,
+                        help='Path to dataset root dir')
+    parser.add_argument('--dataset_type', default='omniglot',
+                        help='Options are omniglot or voxceleb2')
     parser.add_argument('--ckpt_dir_name', default='ckpts')
-    parser.add_argument('-r', '--resume_from_ckpt', default=None, help='path to checkpoint')
-    parser.add_argument('--pretrained', default=None, help='path to pretrained checkpoint')
-    parser.add_argument('--n_epochs', type=int, default=100000)
+    parser.add_argument('-r', '--resume_from_ckpt', default=None,
+                        help='Path to a checkpoint from which to resume training')
+    parser.add_argument('--pretrained', default=None,
+                        help='Path to pretrained checkpoint to use for model initialization')
+    parser.add_argument('--n_epochs', type=int, default=100000,
+                        help='Number of training epochs')
     parser.add_argument('--batch_size', type=int ,default=128)
     parser.add_argument('--num_workers', type=int ,default=4)
-    parser.add_argument('--ds_n_examples_per_cls', type=int ,default=100, help='number of examples per class in an epoch')
-    parser.add_argument('--m', type=int, default=1)
-    parser.add_argument('--n', type=int, default=5)
-    parser.add_argument('--k', type=int, default=5)
-    parser.add_argument('--img_channels', type=int, default=1, help='1 for omniglot, 3 for voxceleb2')
-    parser.add_argument('--img_size', type=int, default=32, help='32 for omniglot, 64 for voxceleb2')
+    parser.add_argument('--ds_n_examples_per_cls', type=int ,default=100,
+                        help='Number of examples per class in an epoch')
+    parser.add_argument('--m', type=int, default=1, help='m: The number of leaked images')
+    parser.add_argument('--n', type=int, default=5, help='n: The number of test images')
+    parser.add_argument('--k', type=int, default=5, help='k: The number of registration images')
+    parser.add_argument('--img_channels', type=int, default=1,
+                        help='Number of image channels. 1 for omniglot, 3 for voxceleb2')
+    parser.add_argument('--img_size', type=int, default=32,
+                        help='Image size. 32 for omniglot, 64 for voxceleb2')
     parser.add_argument('--style_dim', type=int, default=512)
     parser.add_argument('--num_env_noise_layers', type=int, default=4)
-    parser.add_argument('--au_lr', type=float, default=1e-6, help='1e-6 for omniglot, 1e-4 for voxceleb2')
-    parser.add_argument('--im_lr', type=float, default=1e-5, help='1e-5 for omniglot, 1e-4 for voxceleb2')
-    parser.add_argument('--beta1', type=float, default=0.)
-    parser.add_argument('--beta2', type=float, default=0.99)
-    parser.add_argument('--env_noise_mapping_lr', type=float, default=1e-7, help='1e-7 for omniglot, 1e-6 for voxceleb2')
+    parser.add_argument('--au_lr', type=float, default=1e-6,
+                        help='Learning rate for the authenticator. Use 1e-6 for omniglot and 1e-4 for voxceleb2')
+    parser.add_argument('--im_lr', type=float, default=1e-5,
+                        help='Learning rate for the attacker (or impersonator). Use 1e-5 for omniglot, 1e-4 for voxceleb2')
+    parser.add_argument('--beta1', type=float, default=0.,
+                        help="beta1 for the Adam optimizer")
+    parser.add_argument('--beta2', type=float, default=0.99,
+                        help="beta2 for the Adam optimizer")
+    parser.add_argument('--env_noise_mapping_lr', type=float, default=1e-7,
+                        help='Learning rate for the noise mapping module. Use 1e-7 for omniglot, 1e-6 for voxceleb2')
     parser.add_argument('--lr_gamma', type=float, default=0.3)
     parser.add_argument('--milestones', type=int, nargs='+', default=[])
-    parser.add_argument('--reg_param', type=float, default=0., help='0. for omniglot, 10. for voxceleb2')
+    parser.add_argument('--reg_param', type=float, default=0.,
+                        help='GAN regularization coefficient. Use 0. for omniglot, 10. for voxceleb2')
     parser.add_argument('--remove_noise_mean', type=lambda x: bool(int(x)), default=True)
     parser.add_argument('--use_img_att', type=lambda x: bool(int(x)), default=False)
     parser.add_argument('--save_every', type=int, default=10000)

@@ -319,16 +319,20 @@ def main(args):
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-d', '--device', default='cuda', help='cuda or cpu')
-    parser.add_argument('--device_ids', nargs='+', type=int, default=[0])
+    parser.add_argument('-d', '--device', default='cuda',
+                        help='cuda or cpu')
+    parser.add_argument('--device_ids', nargs='+', type=int, default=[0],
+                        help='A list of device ids for the GPUS to be used. '
+                             'E.g., if using GPUs 1,3,5,8, use: --device_ids 1 3 5 8. '
+                             'Only relevant when using cuda.')
     parser.add_argument('--ds_root', required=True,
-                        help='Path to dataset root dir')
+                        help='Path to dataset root dir.')
     parser.add_argument('--split', default = 'val',
-                        help = 'train, val, test')
+                        help = 'train, val, or test')
     parser.add_argument('--dataset_type', default='omniglot',
-                        help='omniglot, voxceleb2')
+                        help='omniglot or voxceleb2')
     parser.add_argument('--example_cnt_per_class', type=int, default=5,
-                        help='How many examples to sample per class for evaluation')
+                        help='How many examples to sample per class for the evaluation')
     parser.add_argument('--img_size', type=int, default=32,
                         help='image size')
     parser.add_argument('--img_channels', type=int, default=1, help='number of image channels')
@@ -342,9 +346,9 @@ def get_args():
     parser.add_argument('--baseline_type',
                         default=None, help='siamese, arcface, or None')
     parser.add_argument('--gim_exp_dir', required=True,
-                        help='experiment directory for the gim model')
+                        help='experiment directory for the GIM model')
     parser.add_argument('--specific_model', default=None,
-                        help='Path to a specific model, if not specified the latest model is taken.')
+                        help='Path to a specific model checkpoint. If not specified, the latest model is taken.')
     parser.add_argument('--csv_file_path', default=os.path.join(os.path.abspath(os.path.dirname(__file__)),'results.csv'),
                         help='The path for the results csv file')
     return parser.parse_args()

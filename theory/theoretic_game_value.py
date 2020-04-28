@@ -61,10 +61,10 @@ def game_value_diff_ml_vs_opt_rho_delta(d, rho, delta):
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-m', type=int, default=1)
-    parser.add_argument('-n', type=int, default=5)
-    parser.add_argument('-k', type=int, default=10)
-    parser.add_argument('-d', type=int, default=100)
+    parser.add_argument('-m', type=int, default=1, help='m: the number of leaked observations')
+    parser.add_argument('-n', type=int, default=5, help='n: the number of test observations')
+    parser.add_argument('-k', type=int, default=10, help='k: the number of registration observations')
+    parser.add_argument('-d', type=int, default=100, help='d: the dimension of observations')
     return parser.parse_args()
 
 ########################################################################################################################
