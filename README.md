@@ -11,9 +11,9 @@ This work was published as an oral presentation in the International Conference 
 * [Setup](#setup)
 * [Usage](#usage)
     * [Game value plots](#game-value-plots)
-    * [Training GIM on Gaussians](#datsets)
-    * [Training GIM on imgs](#datsets)
-    * [Evaluating GIM on the authentication task](#datsets)
+    * [Training GIM on Gaussians](#training-gim-on-gaussians)
+    * [Training GIM on imgs](#training-gim-on-imgs)
+    * [Evaluating GIM on the authentication task](#rvaluating-gim-on-the-authentication-task)
 * [Citation](#citation)
 
 ## Setup
